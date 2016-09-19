@@ -17,6 +17,8 @@ namespace 生成winform界面
 
 
 
+
+
         public Form1()
         {
             InitializeComponent();
