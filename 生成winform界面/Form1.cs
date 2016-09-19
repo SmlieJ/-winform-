@@ -12,6 +12,7 @@ namespace 生成winform界面
 {
     public partial class Form1 : Form
     {
+        private string dd = string.Empty;
         public Form1()
         {
             InitializeComponent();
