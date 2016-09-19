@@ -14,6 +14,9 @@ namespace 生成winform界面
     {
         private string dd = string.Empty;
 
+
+
+
         public Form1()
         {
             InitializeComponent();
