@@ -38,7 +38,7 @@ namespace 生成winform界面.SQL
         /// <summary>
         /// 获取连接数据库的字符串
         /// </summary>
-        public string strconn = System.Configuration.ConfigurationSettings.AppSettings["conn"].ToString();
+        public string strconn = System.Configuration.ConfigurationSettings.AppSettings["SQLconn"].ToString();
         /// <summary>
         /// 日期时间
         /// </summary>
