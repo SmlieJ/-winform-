@@ -53,12 +53,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewAddClass.cs" />
     <Compile Include="Oracle\OracleSet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL\SQLset.cs" />
-    <Compile Include="类似\FrmT_BA_Client.cs" />
-    <Compile Include="类似\FrmT_BA_Client.Designer.cs" />
+    <None Include="类似\FrmT_BA_Client.cs" />
+    <None Include="类似\FrmT_BA_Client.Designer.cs" />
     <Compile Include="自动生成类的实验.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
