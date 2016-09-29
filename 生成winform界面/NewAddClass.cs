@@ -22,7 +22,7 @@ namespace 生成winform界面
         /// <param name="TableName">数据库名</param>
         /// <param name="DataBase">数据库类型</param>
         /// <returns></returns>
-        private System.Data.DataTable ReturnTable(string TableName,string DataBase)
+        public System.Data.DataTable ReturnTable(string TableName,string DataBase)
         {
             string sql = string.Empty;
             System.Data.DataTable dt = new System.Data.DataTable();
@@ -39,14 +39,49 @@ namespace 生成winform界面
             return dt;
         }
 
-        private void GetColumnsType(string TableName, string DataBase)
+        /// <summary>
+        /// 返回列名信息
+        /// </summary>
+        /// <param name="TableName">表名</param>
+        /// <param name="DataBase">数据库类型</param>
+        /// <returns></returns>
+        public System.Data.DataTable GetColumnsType(string TableName, string SourceName,string DataBase)
         {
-           
+            string sql = string.Empty;
+            System.Data.DataTable dt = new System.Data.DataTable();
+            switch (DataBase)
+            {
+                case "SQL Server":
+                    sql = string.Format("USE {1} SELECT T.name AS TableName as 表名, C.name AS ColName as 列名, ST.name AS ColType as 数据类型, C.Length as 长度 FROM dbo.sysobjects T LEFT JOIN dbo.syscolumns C ON T.id = C.id LEFT JOIN dbo.systypes ST ON C.xtype = ST.xusertype WHERE T.xtype = 'U' and t.name = '{0}'  ORDER BY T.name, C.colid ", TableName, SourceName);
+                    dt = SQLSet.ExecutTable(sql);
+                    return dt;
+                case "Access": return dt;
+                case "Oracle": return dt;
+                case "ListSQL": return dt;
+            }
+            return dt;
         }
 
-        private void ReturnTableName(string SoureName, string DataBase)
+        /// <summary>
+        /// 返回所有数据库名
+        /// </summary>
+        /// <param name="DataBase">数据类型</param>
+        /// <returns></returns>
+        public System.Data.DataTable ReturnTableName(string DataBase)
         {
-
+            string sql = string.Empty;
+            System.Data.DataTable dt = new System.Data.DataTable();
+            switch (DataBase)
+            {
+                case "SQL Server":
+                    sql = string.Format("SELECT name FROM master.dbo.sysdatabases ");
+                    dt = SQLSet.ExecutTable(sql);
+                    return dt;
+                case "Access": return dt;
+                case "Oracle": return dt;
+                case "ListSQL": return dt;
+            }
+            return dt;
         }
         
 
