@@ -52,7 +52,7 @@ namespace 生成winform界面
             switch (DataBase)
             {
                 case "SQL Server":
-                    sql = string.Format("USE {1} SELECT T.name AS TableName as 表名, C.name AS ColName as 列名, ST.name AS ColType as 数据类型, C.Length as 长度 FROM dbo.sysobjects T LEFT JOIN dbo.syscolumns C ON T.id = C.id LEFT JOIN dbo.systypes ST ON C.xtype = ST.xusertype WHERE T.xtype = 'U' and t.name = '{0}'  ORDER BY T.name, C.colid ", TableName, SourceName);
+                    sql = string.Format("USE {1} SELECT T.name AS  表名, C.name as 列名, ST.name as 数据类型, C.Length as 长度 FROM dbo.sysobjects T LEFT JOIN dbo.syscolumns C ON T.id = C.id LEFT JOIN dbo.systypes ST ON C.xtype = ST.xusertype WHERE T.xtype = 'U' and t.name = '{0}'  ORDER BY T.name, C.colid ", TableName, SourceName);
                     dt = SQLSet.ExecutTable(sql);
                     return dt;
                 case "Access": return dt;

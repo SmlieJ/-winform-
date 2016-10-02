@@ -53,7 +53,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewAddClass.cs" />
+    <Compile Include="ExecutDataSoure.cs" />
+    <Compile Include="NewFormAndClass.cs" />
     <Compile Include="Oracle\OracleSet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ListSQL\" />
+    <Folder Include="模板\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
